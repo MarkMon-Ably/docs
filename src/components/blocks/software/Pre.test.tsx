@@ -23,7 +23,7 @@ describe('<Pre />', () => {
     render(
       <PageLanguageContext.Provider value="javascript">
         <Pre
-          data={[{ data: 'useVars = false;', type: 'text' }]}
+          data={[{ data: 'useVars = false;', type: 'unknown' }]}
           language="javascript"
           languages={['python', 'csharp']}
           altData={{
@@ -33,6 +33,7 @@ describe('<Pre />', () => {
         />
       </PageLanguageContext.Provider>,
     );
+    console.log(screen);
     expect(screen.getByText('we don’t yet have a relevant code sample', { exact: false })).toBeInTheDocument();
   });
 
